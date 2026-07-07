@@ -5,6 +5,8 @@ SELECT *
 FROM `brighttv`.`tvdata`.`bright_tv_dataset_2`
 LIMIT 100;
 -----------------------------------------------------------------
+Grouping by age
+---------------
 SELECT age, 
  CASE 
  WHEN age= 0 THEN 'Infant'
@@ -17,6 +19,9 @@ SELECT age,
  END AS age_group
 FROM `brighttv`.`tvdata`.`bright_tv_dataset_2`;
 --------------------------------------------------------------------------
+Check different Provinces
+-------------------------
+
 
 SELECT DISTINCT province,
 CASE 
@@ -26,5 +31,43 @@ WHEN province IS NULL THEN 'Unknown'
 ELSE province
 END AS region
 FROM `brighttv`.`tvdata`.`bright_tv_dataset_2`;
+---------------------------------------------------------------------------
+Check Different Genders
+
+ SELECT DISTINCT gender,
+ CASE 
+ WHEN gender = 'None' THEN 'Unknown'
+ WHEN gender = '' THEN 'Unknown'
+ WHEN gender IS NULL THEN 'Unknown'
+ ELSE gender
+ END AS gender
+ FROM `brighttv`.`tvdata`.`bright_tv_dataset_2`;
+--------------------------------------------------------------------------
+SELECT DISTINCT race,
+ CASE 
+ WHEN race = 'None' THEN 'Unknown'
+ WHEN race = '' THEN 'Unknown'
+ WHEN race IS NULL THEN 'Unknown'
+ ELSE race
+ END AS race
+ FROM `brighttv`.`tvdata`.`bright_tv_dataset_2`;
+ ------------------------------------------------------------------------
+ SELECT DISTINCT email,
+ CASE 
+ WHEN email = 'None' THEN 'Unknown'
+ WHEN email = '' THEN 'Unknown'
+ WHEN email IS NULL THEN 'Unknown'
+ ELSE email
+ END AS email
+ FROM `brighttv`.`tvdata`.`bright_tv_dataset_2`;
+ -----------------------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
